@@ -38,6 +38,7 @@
 
 .MMM-Keyboard textarea:focus {
   outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 .MMM-Keyboard .sendButton {
@@ -70,7 +71,8 @@
   text-align: center;
 }
 
-.MMM-Keyboard .closeButton:hover {
+.MMM-Keyboard .closeButton:hover,
+.MMM-Keyboard .closeButton:focus {
   background-color: #555;
 }
 

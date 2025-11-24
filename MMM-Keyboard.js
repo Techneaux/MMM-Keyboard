@@ -70,6 +70,7 @@ Module.register("MMM-Keyboard", {
     var input = document.createElement("textarea");
     input.id = "kbInput";
     input.setAttribute("rows", "2");
+    input.setAttribute("aria-label", "Keyboard input");
     input.addEventListener("input", event => {
       this.keyboard.setInput(event.target.value);
     });
@@ -84,6 +85,7 @@ Module.register("MMM-Keyboard", {
     closeButton.className = "closeButton";
     closeButton.innerText = "\u00d7";
     closeButton.setAttribute("name", "closeButton");
+    closeButton.setAttribute("aria-label", "Close keyboard");
     closeButton.onclick = () => {
       this.hideKeyboard();
       document.getElementById("kbInput").value = '';
