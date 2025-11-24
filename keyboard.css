@@ -7,6 +7,7 @@
 }
 
 .MMM-Keyboard .kbContainer {
+  position: relative;
   opacity: 0;
   margin-top: -200%;
   transition: margin-top 0.8s ease-in-out, opacity 0.3s;
@@ -30,9 +31,14 @@
   border-radius: 8px;
   resize: none;
   color: white;
+  overflow-y: auto;
+  max-height: 80px;
+  font-family: inherit;
 }
 
-.MMM-Keyboard input:focus {
+.MMM-Keyboard textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 .MMM-Keyboard .sendButton {
@@ -46,6 +52,28 @@
   cursor: pointer;
   margin: 10px 5px;
   min-width: 60px;
+}
+
+.MMM-Keyboard .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #333;
+  border: 2px solid #666;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  cursor: pointer;
+  line-height: 32px;
+  text-align: center;
+}
+
+.MMM-Keyboard .closeButton:hover,
+.MMM-Keyboard .closeButton:focus {
+  background-color: #555;
 }
 
 .MMM-Keyboard {
@@ -72,7 +100,8 @@
 
 .MMM-Keyboard .hg-theme-default .hg-button {
   height: 50px;
-  color: #5d7b9d;
+  background-color: #333;
+  color: #fff;
   font-size: 0.7em;
   padding: 8px;
   margin: 1px;
@@ -86,9 +115,9 @@
 .MMM-Keyboard .hg-theme-default .specialButton {
   min-width: 60px;
   max-width: 150px;
-  color: #0000ce;
+  color: #aaa;
 }
 
 .MMM-Keyboard .hg-theme-default .emptyButton {
-  background-color: #ccc;
+  background-color: #222;
 }

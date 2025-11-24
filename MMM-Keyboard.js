@@ -67,32 +67,33 @@ Module.register("MMM-Keyboard", {
     var inputDiv = document.createElement("div");
     inputDiv.id = "inputDiv";
     inputDiv.style.display = "none";
-    var input = document.createElement("input");
+    var input = document.createElement("textarea");
     input.id = "kbInput";
-    input.setAttribute("type", "text");
+    input.setAttribute("rows", "2");
+    input.setAttribute("aria-label", "Keyboard input");
     input.addEventListener("input", event => {
       this.keyboard.setInput(event.target.value);
     });
     var send = document.createElement("button");
     send.className = "sendButton";
-    send.innerText = "  SEND!  ";
+    send.innerText = "Submit";
     send.setAttribute("name", "sendButton");
     send.onclick = () => {
       this.sendInput();
     };
-    var hideButton = document.createElement("button");
-    hideButton.className = "sendButton";
-    hideButton.innerText = "\u21e7";
-    hideButton.style.backgroundColor = "#880000";
-    hideButton.setAttribute("name", "hideButton");
-    hideButton.onclick = () => {
+    var closeButton = document.createElement("button");
+    closeButton.className = "closeButton";
+    closeButton.innerText = "\u00d7";
+    closeButton.setAttribute("name", "closeButton");
+    closeButton.setAttribute("aria-label", "Close keyboard");
+    closeButton.onclick = () => {
       this.hideKeyboard();
       document.getElementById("kbInput").value = '';
     };
 
     inputDiv.appendChild(input);
     inputDiv.appendChild(send);
-    inputDiv.appendChild(hideButton);
+    this.kbContainer.appendChild(closeButton);
     this.kbContainer.appendChild(inputDiv);
     var kb = document.createElement("div");
     kb.className = "simple-keyboard";
