@@ -25,6 +25,7 @@
   align-items: stretch;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 15px;
 }
 
 .MMM-Keyboard .show-keyboard #inputDiv {
