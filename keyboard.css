@@ -44,6 +44,8 @@
   overflow-y: auto;
   max-height: 80px;
   font-family: inherit;
+  scrollbar-width: thin;
+  scrollbar-color: #666 #222;
 }
 
 .MMM-Keyboard #kbInput::-webkit-scrollbar {
