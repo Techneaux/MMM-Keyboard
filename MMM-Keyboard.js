@@ -66,7 +66,6 @@ Module.register("MMM-Keyboard", {
     this.kbContainer.className = "kbContainer";
     var inputDiv = document.createElement("div");
     inputDiv.id = "inputDiv";
-    inputDiv.style.display = "none";
     var input = document.createElement("textarea");
     input.id = "kbInput";
     input.setAttribute("rows", "2");
@@ -245,7 +244,6 @@ Module.register("MMM-Keyboard", {
 
   showKeyboard: function() {
     this.kbContainer.classList.add("show-keyboard");
-    document.getElementById("inputDiv").style.display = "block";
     document.getElementById("kbInput").value = this.keyboard.getInput();
   },
 
