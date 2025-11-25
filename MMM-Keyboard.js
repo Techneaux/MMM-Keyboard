@@ -136,6 +136,7 @@ Module.register("MMM-Keyboard", {
   onChange: function(input) {
     var kbInput = document.getElementById("kbInput");
     kbInput.value = input;
+    kbInput.scrollTop = kbInput.scrollHeight;
     this.log("Input changed: " + input);
     if (kbInput.value == "" && this.config.startUppercase) {
       this.shiftState = 1;
